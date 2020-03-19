@@ -30,9 +30,9 @@ def generate_random_number(low, high):
     seed(1)
     # generate some integers
     for _ in range(high):
-    	randomValue = randint((low-1), high)
-    	#print(value)
-    return randomValue
+        global randomValue
+        randomValue = randint((low-1), high)
+        return randomValue
 
 #greet the player
 print("Welcome to the number game!\n\nPlease select a lower limit and an upper limit for the range you want to play in.\nAfter a random number within the range you specified is generated, make guesses to match the randomly generated number!")
