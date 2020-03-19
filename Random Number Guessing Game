@@ -1,0 +1,45 @@
+#!/usr/bin/env python3
+
+def guess_number(n):
+
+    correctNumber = int(n)
+    exit = False
+
+    #while loop to keep asking until condition is met
+    while not exit:
+        #get user's input
+        userNumber = int(input("\n\nSelect a number between 1 and 100.\n\n----> "))
+        print(userNumber)
+        #check against correct userNumber
+        if userNumber == correctNumber:
+            print("WIN")
+            exit = True
+            return
+        elif userNumber < correctNumber:
+            print("Too low! Try again.\n\n----> ")
+        else:
+            print("Too High! Try again. \n\n----> ")
+
+
+def generate_random_number(low, high):
+
+    # generate random integer values
+    from random import seed
+    from random import randint
+    # seed random number generator
+    seed(1)
+    # generate some integers
+    for _ in range(high):
+    	randomValue = randint((low-1), high)
+    	#print(value)
+    return randomValue
+
+#greet the player
+print("Welcome to the number game!\n\nPlease select a lower limit and an upper limit for the range you want to play in.\nAfter a random number within the range you specified is generated, make guesses to match the randomly generated number!")
+low = int(input("Select a number as the LOWER limit"))
+high = int(input("Select a number as the UPPER limit"))
+randomValue = int(0)
+
+
+generate_random_number(low, high)
+guess_number(randomValue)
