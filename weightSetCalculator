@@ -1,0 +1,30 @@
+'''
+inc = 5
+minWeight = 10
+maxWeight = 90
+price = 1.5
+-------------------
+'''
+weightSets = []
+totalCost = 0
+
+
+minWeight = int(input("Enter lightest selectable weight per dumbell (in lbs):\n--->"))
+maxWeight = int(input("Enter heviest selectable weight per dumbell (in lbs):\n--->"))
+inc = int(input("Enter increment dumbellweight can be changed by (in whole lbs):\n--->"))
+acceptPrice = input("Typical cost per lb of dumbbell is $1.50. Do you want to keep this?\n(y = yes, n = no)\n--->")
+weight = minWeight
+if acceptPrice == 'y':
+    price = 1.5
+else:
+    price = float(input("How much per lb? \n$"))
+
+
+while weight <= maxWeight:
+    weightSets.append(weight)
+    weight = weight + inc
+for weight in weightSets:
+    cost = weight * price
+    totalCost = totalCost + cost
+print("Total cost for a single one of each dumbell: $" + str(totalCost))
+print("Total cost for two of each dumbell: $" + str(totalCost*2))
